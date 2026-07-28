@@ -1,0 +1,137 @@
+baseurl = "https://windasgo.ccwu.cc/"
+languageCode = "zh-cn"
+theme = "hugo-theme-stack"
+paginate = 5
+title = "Wind As Go"
+copyright = "LI WENYOU"
+
+# 中文博客，启用 CJK 支持
+DefaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+
+[languages]
+  [languages.zh-cn]
+    languageName = "中文"
+    title = "Wind As Go"
+    weight = 1
+    [languages.zh-cn.params]
+      description = "记录思考，分享见闻。"
+
+[permalinks]
+  post = "/p/:slug/"
+  page = "/:slug/"
+
+[params]
+  mainSections = ["post"]
+  featuredImageField = "image"
+  rssFullContent = true
+
+  [params.footer]
+    since = 2026
+    customText = ""
+
+  [params.dateFormat]
+    published = "2006-01-02"
+    lastUpdated = "2006-01-02 15:04"
+
+  [params.sidebar]
+    emoji = "🌬️"
+    subtitle = "行如风，笔如刀。"
+    [params.sidebar.avatar]
+      enabled = true
+      local = true
+      src = "img/avatar.png"
+
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+    [params.article.license]
+      enabled = false
+
+  [params.comments]
+    enabled = false
+
+  [params.widgets]
+    homepage = [
+      { type = "search" },
+      { type = "archives", params = { limit = 5 } },
+      { type = "categories", params = { limit = 10 } },
+      { type = "tag-cloud", params = { limit = 10 } }
+    ]
+    page = [
+      { type = "toc" }
+    ]
+
+  [params.opengraph]
+    [params.opengraph.twitter]
+      site = ""
+      card = "summary_large_image"
+
+  [params.defaultImage]
+    [params.defaultImage.opengraph]
+      enabled = false
+      local = false
+      src = ""
+
+  [params.colorScheme]
+    toggle = true
+    default = "auto"
+
+  [params.imageProcessing]
+    [params.imageProcessing.cover]
+      enabled = true
+    [params.imageProcessing.content]
+      enabled = true
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "归档"
+    url = "/archives/"
+    weight = 20
+  [[menu.main]]
+    name = "搜索"
+    url = "/search/"
+    weight = 30
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 40
+
+  [[menu.social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/LIWENYOU2"
+    params = { icon = "brand-github" }
+
+[related]
+  includeNewer = true
+  threshold = 60
+  toLower = false
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 200
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = true
+    startLevel = 2
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4
